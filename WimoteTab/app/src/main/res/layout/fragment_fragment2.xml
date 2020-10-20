@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="477dp" />
+
+        <Button
+            android:id="@+id/LeftBtn"
+            android:layout_width="match_parent"
+            android:layout_height="113dp"
+            android:background="@drawable/arrow_left"
+            android:onClick="leftBtn" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="364dp" />
+
+        <Button
+            android:id="@+id/UpBtn"
+            android:layout_width="match_parent"
+            android:layout_height="113dp"
+            android:background="@drawable/arrow_up"
+            android:onClick="upBtn" />
+
+        <Button
+            android:id="@+id/DownBtn"
+            android:layout_width="match_parent"
+            android:layout_height="113dp"
+            android:background="@drawable/arrow_down"
+            android:onClick="downBtn" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/PowerBtn"
+            android:layout_width="match_parent"
+            android:layout_height="113dp"
+            android:background="@drawable/power_sleep"
+            android:onClick="powerBtn" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="251dp" />
+
+        <Button
+            android:id="@+id/EnterBtn"
+            android:layout_width="match_parent"
+            android:layout_height="113dp"
+            android:background="@drawable/enter_icon"
+            android:onClick="enterBtn" />
+
+        <Button
+            android:id="@+id/RightBtn"
+            android:layout_width="match_parent"
+            android:layout_height="113dp"
+            android:background="@drawable/arrow_right"
+            android:onClick="rightBtn" />
+    </LinearLayout>
+</LinearLayout>
