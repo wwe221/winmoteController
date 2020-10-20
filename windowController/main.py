@@ -1,4 +1,5 @@
 import socket
+import os
 from pynput.keyboard import Controller, KeyCode
 #https://creativeworks.tistory.com/entry/%EB%82%A8%EC%9D%98-%EC%BB%B4%ED%93%A8%ED%84%B0%EB%A5%BC-%EB%82%B4-%EB%A7%88%EC%9D%8C%EB%8C%80%EB%A1%9C-%EB%8B%A4%EB%A3%AC%EB%8B%A4-Python-Reverse-Shell002-Binding-the-Socket-and-Listening-for-Connections-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EB%A6%AC%EB%B2%84%EC%8A%A4-%EC%89%98-%EC%86%8C%EC%BC%93-%EB%AC%B6%EA%B8%B0-%EC%97%B0%EA%B2%B0-%EB%8C%80%EA%B8%B0?category=629705
 def main():
@@ -54,6 +55,7 @@ def socket_accept():
         finally:
             conn.close()
 def MediaControl(numb):
+#https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
     keyboard = Controller()
     if numb == "1":
         keyboard.press(KeyCode.from_vk(0xB3))  # Play/Pause
@@ -62,23 +64,41 @@ def MediaControl(numb):
         keyboard.press(KeyCode.from_vk(0xB2))  # Stop
         keyboard.release(KeyCode.from_vk(0xB3))  # Play/Pause
     elif numb == "3":
-        keyboard.press(KeyCode.from_vk(0xB1))  # PrevTarck
+        keyboard.press(KeyCode.from_vk(0xB1))  # PrevTrack
         keyboard.release(KeyCode.from_vk(0xB3))  # Play/Pause
     elif numb == "4":
-        keyboard.press(KeyCode.from_vk(0xB0))  # NextTarck
+        keyboard.press(KeyCode.from_vk(0xB0))  # NextTrack
         keyboard.release(KeyCode.from_vk(0xB3))  # Play/Pause
     elif numb == "5":
         keyboard.press(KeyCode.from_vk(0xAD))  # Mute
         keyboard.release(KeyCode.from_vk(0xAD))
     elif numb == "6":
-        keyboard.press(KeyCode.from_vk(0xAE)) # Volumn Down
+        keyboard.press(KeyCode.from_vk(0xAE)) # Volume Down
         keyboard.release(KeyCode.from_vk(0xAE))
     elif numb == "7":
-        keyboard.press(KeyCode.from_vk(0xAF)) # Volumn Up
+        keyboard.press(KeyCode.from_vk(0xAF)) # Volume Up
         keyboard.release(KeyCode.from_vk(0xAF))
     elif numb == "8":
         keyboard.press(KeyCode.from_vk(0x5B))  # LeftWindows Key
         keyboard.press(KeyCode.from_vk(0x31))  # 1
         keyboard.release(KeyCode.from_vk(0x5B))
         keyboard.release(KeyCode.from_vk(0x31))
+    elif numb == "9":
+        keyboard.press(KeyCode.from_vk(0x25))   # Left Arrow
+        keyboard.release(KeyCode.from_vk(0x25))
+    elif numb == "10":
+        keyboard.press(KeyCode.from_vk(0x26))   # Up Arrow
+        keyboard.release(KeyCode.from_vk(0x26))
+    elif numb == "11":
+        keyboard.press(KeyCode.from_vk(0x27))   # Right Arrow
+        keyboard.release(KeyCode.from_vk(0x27))
+    elif numb == "12":
+        keyboard.press(KeyCode.from_vk(0x28))   # Down Arrow
+        keyboard.release(KeyCode.from_vk(0x28))
+    elif numb == "13":
+        keyboard.press(KeyCode.from_vk(0x56))  # V key
+        keyboard.release(KeyCode.from_vk(0x56))
+    elif numb == "99":
+        os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0") # Sleep
+        print()
 main()
